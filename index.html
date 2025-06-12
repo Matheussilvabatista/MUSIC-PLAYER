@@ -20,10 +20,11 @@
 <body>
     <div class="content">
         <div class="music">
-            <img src="./assets/music-img.png" alt="capa do album que contem musica">
+            <img id="music-album" src="./assets/music-img.png" alt="capa do album que contem musica">
             <div class="music-info">
-                <h1>Música</h1>
-                <span>Banda X</span>
+                <audio id="music-player"></audio>
+                <h1 id="music-title">Musica exemplo</h1>
+                <span id="music-artist">Banda X</span>
 
 
 
@@ -33,26 +34,30 @@
 
         </div>
         <div class="buttons">
-            <button><ion-icon name="play-back-outline"></ion-icon></button>
-            <button><ion-icon name="play-outline"></ion-icon></button>
-            <button><ion-icon name="play-forward-outline"></ion-icon></button>
+            <button id="playback-button"><ion-icon name="play-back-outline"></ion-icon></button>
+            <button id="play-button"><ion-icon name="play-outline"></ion-icon></button>
+            <button id="forward-button"><ion-icon name="play-forward-outline"></ion-icon></button>
+            <button id="music-pause"><ion-icon name="pause-outline"></ion-icon></button>
+            
         </div>
 
         <div class="player-footer">
             <div class="progress">
                 <div class="progress-bg"></div>
-                <input type="range" class="progress-bar">
+                <input type="range" class="progress-bar" id="progress">
             </div>
 
             <div class="time">
-                <span>00:00</span>
-                <span>04:30</span>
+                <span id="current-time">00:00</span>
+                <span id="end-time">04:30</span>
 
             </div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="./scripts.js"></script>
 </body>
 
 
