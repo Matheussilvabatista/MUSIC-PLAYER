@@ -36,43 +36,50 @@ const musics = [
 
 ]
 
-function getMusic() {
-    musicPlayer.src = musics[0].caminhoDaMusica
-    musicAlbum.src = musics[0].album
-    musicTitle.innerText = musics[0].tituloDaMusica
-    musicArtist.innerText = musics[0].artista
+var musicaAtual = 0
+
+function getMusic(indexMusica) {
+    musicPlayer.src = musics[indexMusica].caminhoDaMusica
+    musicAlbum.src = musics[indexMusica].album
+    musicTitle.innerText = musics[indexMusica].tituloDaMusica
+    musicArtist.innerText = musics[indexMusica].artista
+
+    musicaAtual = indexMusica
 
 }
+
+getMusic(musicaAtual)
+
 function nextmusic() {
-    musicPlayer.src = musics[1].caminhoDaMusica
-    musicAlbum.src = musics[1].album
-    musicTitle.innerText = musics[1].tituloDaMusica
-    musicArtist.innerText = musics[1].artista
+    getMusic(musicaAtual + 1)
+    musicPlayer.play()
 
 }
 function previousmusic() {
-    musicPlayer.src = musics[0].caminhoDaMusica
-    musicAlbum.src = musics[0].album
-    musicTitle.innerText = musics[0].tituloDaMusica
-    musicArtist.innerText = musics[0].artista
-
+    getMusic(musicaAtual - 1)
+    musicPlayer.play()
 }
-getMusic()
+
+getMusic(musicaAtual)
 
 
 playButton.addEventListener("click", function () {
+     playButton.style.display = "none"
+    pauseButton.style.display = "flex"
     musicPlayer.play()
 
 })
 
 pauseButton.addEventListener("click", function () {
+    playButton.style.display = "flex"
+    pauseButton.style.display = "none"
     musicPlayer.pause()
 
 })
 
 forwardButton.addEventListener("click", function () {
     nextmusic()
-    musicPlayer.play()
+    
 
 })
 

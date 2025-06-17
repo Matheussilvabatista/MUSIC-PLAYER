@@ -90,6 +90,10 @@ body {
 
 }
 
+.buttons #music-pause {
+display: none;
+
+}
 .player-footer {
     width: 100%;
 
